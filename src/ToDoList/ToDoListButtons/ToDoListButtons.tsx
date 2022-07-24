@@ -10,12 +10,24 @@ export const ToDoListButtons = ({ addText, minusText }: Iprops) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value);
   };
+  const handleClickClear = () => {
+    setInput("");
+  };
   return (
     <div>
-      <input onChange={handleChange} value={input} type={"text"} />
+      <input
+        onChange={handleChange}
+        value={input}
+        type={"text"}
+        placeholder="Введите данные"
+      />
+
+      <button onClick={handleClickClear}>&times;</button>
+
       <br />
-      <button onClick={handleClickAdd}> Добавить </button>
-      <button onClick={handleClickDel}> Очистить форму </button>
+      <button onClick={handleClickAdd}> Добавить</button>
+      <button>Редакировать</button>
+      <button onClick={handleClickDel}>Очистить список</button>
     </div>
   );
 };
