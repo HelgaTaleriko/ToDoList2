@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { ToDoListDisplay } from "./ToDoListDisplay";
 import { ToDoListButtons } from "./ToDoListButtons";
-import { type } from "@testing-library/user-event/dist/type";
 
 export type ItemType = {
   text: string;
