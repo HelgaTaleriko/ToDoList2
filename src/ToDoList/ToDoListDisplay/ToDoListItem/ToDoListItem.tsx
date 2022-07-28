@@ -1,5 +1,7 @@
 import React from "react";
 import { ItemType } from "../../ToDoList";
+import { TDLForm } from "../../ToDoListButtons/TDLForm";
+
 type Iprops = {
   item: ItemType;
   deleteItem: (id: number) => void;
@@ -12,7 +14,9 @@ export const ToDoListItem = ({ item, deleteItem }: Iprops) => {
   return (
     <div>
       <li>
-        {item.text} <button onClick={handleDelete}>&times;</button>
+        {item.text}
+        <TDLForm />
+        <button onClick={handleDelete}>&times;</button>
       </li>
     </div>
   );
