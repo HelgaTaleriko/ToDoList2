@@ -1,7 +1,8 @@
 import React from "react";
 import { ToDoListItem } from "./ToDoListItem";
-// import { ToDoListColumns } from "./ToDoListColumns";
 import { ItemType } from "../ToDoList";
+import { TDLEdit } from "./TDLEdit";
+
 export type Iprops = {
   items: ItemType[];
   deleteItem: (id: number) => void;
@@ -15,7 +16,11 @@ export const ToDoListDisplay = ({ items, deleteItem }: Iprops) => {
       <h1> {text}</h1>
       <ul>
         {items.map((item) => (
-          <ToDoListItem deleteItem={deleteItem} item={item} />
+          <div>
+            <ToDoListItem deleteItem={deleteItem} item={item}>
+              <TDLEdit text={text} item={item} />
+            </ToDoListItem>
+          </div>
         ))}
       </ul>
     </div>
