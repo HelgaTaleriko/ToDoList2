@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { ItemType } from "../../ToDoList";
-type Iprops = {
+
+export type Iprops = {
   item: ItemType;
-  text: string;
 };
 export const TDLEdit = ({ item }: Iprops) => {
   const [text, setText] = useState(item.text);
@@ -11,7 +11,7 @@ export const TDLEdit = ({ item }: Iprops) => {
     setText(event.target.value);
   };
   return isEdit ? (
-    <input value={text} onChange={handleChange} />
+    <input onChange={handleChange} />
   ) : (
     <div onClick={() => setIsEdit(true)}>{text}</div>
   );
