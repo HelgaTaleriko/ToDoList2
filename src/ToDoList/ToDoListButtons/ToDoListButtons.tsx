@@ -26,7 +26,6 @@ export const ToDoListButtons = ({ addText, minusText }: Iprops) => {
 
       <br />
       <button onClick={handleClickAdd}> Добавить</button>
-      <button>Редакировать</button>
       <button onClick={handleClickDel}>Очистить список</button>
     </div>
   );
