@@ -5,6 +5,7 @@ import { ToDoListButtons } from "./ToDoListButtons";
 export type ItemType = {
   text: string;
   id: number;
+  status?: "toDo" | "inProgress" | "completed";
 };
 export const ToDoList = () => {
   const [items, setItems] = useState<ItemType[]>([{ text: "test", id: 0 }]);
@@ -23,7 +24,19 @@ export const ToDoList = () => {
   };
   return (
     <div>
-      <ToDoListDisplay deleteItem={deleteItem} items={items} />
+      {/*<ToDoListDisplay*/}
+      {/*  deleteItem={deleteItem}*/}
+      {/*  items={items.filter((item) => item.status === "toDo")}*/}
+      {/*/>*/}
+      {/*<ToDoListDisplay*/}
+      {/*  deleteItem={deleteItem}*/}
+      {/*  items={items.filter((item) => item.status === "inProgress")}*/}
+      {/*/>*/}
+      {/*<ToDoListDisplay*/}
+      {/*  deleteItem={deleteItem}*/}
+      {/*  items={items.filter((item) => item.status === "completed")}*/}
+      {/*/>*/}
+      <ToDoListDisplay items={items} deleteItem={deleteItem} />
       <ToDoListButtons addText={addText} minusText={minusText} />
     </div>
   );
