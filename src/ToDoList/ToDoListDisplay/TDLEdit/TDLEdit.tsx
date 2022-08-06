@@ -10,8 +10,16 @@ export const TDLEdit = ({ item }: Iprops) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
   };
+  // const saveTodo = (id: number) => {
+  //   newTodo = [...item].map(item=>(
+  //       if(item.id==id){item.text=value}
+  //   ))
+  // };
   return isEdit ? (
-    <input onChange={handleChange} />
+    <div>
+      <input onChange={handleChange} value={text} />
+      <button onClick={() => saveTodo(item.id)}>Сохранить</button>
+    </div>
   ) : (
     <div onClick={() => setIsEdit(true)}>{text}</div>
   );
