@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { ItemType } from "../../ToDoList";
 
 export type Iprops = {
@@ -6,21 +6,29 @@ export type Iprops = {
 };
 export const TDLEdit = ({ item }: Iprops) => {
   const [text, setText] = useState(item.text);
-  const [isEdit, setIsEdit] = useState(false);
+  const [isEdit, setIsEdit] = useState(null);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
   };
-  // const saveTodo = (id: number) => {
-  //   newTodo = [...item].map(item=>(
-  //       if(item.id==id){item.text=value}
-  //   ))
-  // };
+  const editTodo = (item: any) => {
+    setIsEdit(item);
+  };
+  const saveTodo = (item: any) => {
+    if (item.id == item) {
+      item.text = text;
+      return item;
+    } else {
+      setText(text);
+    }
+    setIsEdit(null);
+  };
+
   return isEdit ? (
     <div>
       <input onChange={handleChange} value={text} />
-      <button onClick={() => saveTodo(item.id)}>Сохранить</button>
+      <button onClick={saveTodo}>Сохранить</button>
     </div>
   ) : (
-    <div onClick={() => setIsEdit(true)}>{text}</div>
+    <div onClick={editTodo}>{text}</div>
   );
 };

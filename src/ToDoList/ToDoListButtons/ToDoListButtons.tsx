@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-type Iprops = {
+export type Iprops = {
   addText: (text: string) => void;
   minusText: () => void;
 };
