@@ -1,0 +1,24 @@
+#columns {
+  -ms-box-orient: horizontal;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+
+.toDo {
+  flex-grow: 1;
+  border: 3px solid crimson;
+
+}
+.inProgress {
+    flex-grow: 1;
+    border: 3px solid orange;
+
+}
+.completed {
+    flex-grow: 1;
+    border: 3px solid green;
+
+}
+div {
+    background-color: blanchedalmond;}

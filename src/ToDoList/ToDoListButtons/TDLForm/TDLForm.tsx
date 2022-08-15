@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { ItemType } from "../../ToDoList";
+type Iprops = {
+  item: ItemType;
+};
 
 export const TDLForm = () => {
   const [selectedValue, setSelectedValue] = useState("");
