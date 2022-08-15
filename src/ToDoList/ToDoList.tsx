@@ -1,34 +1,34 @@
 import React, { useState } from "react";
 import { ToDoListDisplay } from "./ToDoListDisplay";
 import { ToDoListButtons } from "./ToDoListButtons";
+import "./ToDoList.css";
 
 export type ItemType = {
   text: string;
   id: number;
-  status?: "toDo" | "inProgress" | "completed";
+  status: "toDo" | "inProgress" | "completed";
 };
+const initialValues: ItemType[] = [
+  { text: "test", id: 0, status: "toDo" },
+  { text: "test2", id: 1, status: "inProgress" },
+  { text: "test3", id: 3, status: "completed" },
+];
 export const ToDoList = () => {
-  const [items, setItems] = useState<ItemType[]>([{ text: "test", id: 0 }]);
+  const [items, setItems] = useState<ItemType[]>(initialValues);
   const addText = (text: string) => {
-    //создаем элементы массива
-    const newItem: ItemType = {
+    let newItem: ItemType;
+    newItem = {
       text: text,
       id: new Date().valueOf(),
       status: "toDo",
     };
-    //создаем массив
     const newArray = [...items, newItem];
-    // const array2 = [...items];
-    // array2.push(newItem);
-    // setItems устанавливает новое значение items
     setItems(newArray);
   };
   const minusText = () => {
     setItems([]);
   };
-  // console.log(items);
 
-  //переписать deleteitem
   const deleteItem = (id: number) => {
     const filteredItems = items.filter((item) => {
       return item.id !== id;
@@ -37,7 +37,9 @@ export const ToDoList = () => {
   };
   //решение Миши №1:
   const saveTodo = (text: string, id: number) => {
+    //сделать savetodo с сохраненем стаатуса
     //создаем элемент массива
+    // найти старый и объеденить с новым текстом(прочитать про объекты и спрэд операции)
     const newItem: ItemType = {
       text: text,
       id: id,
@@ -49,14 +51,15 @@ export const ToDoList = () => {
     const filtredItems = items.filter((item) => {
       return item.id !== id;
     });
-    console.log(filtredItems);
     //добавляем в фильтрованый массив новое значение
     const newArray = [...filtredItems, newItem];
+    //сортировать по id( sort, find)
     //устанавливаем setItems
     setItems(newArray);
-    console.log(newArray);
-    console.log(items);
-    //
+
+
+
+ //
     //решение черех findIndex:
     // найти элемент , который = id элемента массива
     //
@@ -66,29 +69,32 @@ export const ToDoList = () => {
   //из массива найти элемент и поменять в этом элементе значение
   return (
     <div>
-      {/*<ToDoListDisplay*/}
-      {/*  deleteItem={deleteItem}*/}
-      {/*  items={items.filter((item) => item.status === "toDo")}*/}
-      {/*/>*/}
-      {/*<ToDoListDisplay*/}
-      {/*  deleteItem={deleteItem}*/}
-      {/*  items={items.filter((item) => item.status === "inProgress")}*/}
-      {/*/>*/}
-      {/*<ToDoListDisplay*/}
-      {/*  deleteItem={deleteItem}*/}
-      {/*  items={items.filter((item) => item.status === "completed")}*/}
-      {/*/>*/}
-      <ToDoListDisplay
-        items={items}
-        deleteItem={deleteItem}
-        saveTodo={saveTodo}
-      />
-      <ToDoListDisplay
-        items={items}
-        deleteItem={deleteItem}
-        saveTodo={saveTodo}
-      />
-      <ToDoListButtons addText={addText} minusText={minusText} />
+      <div id="columns">
+        <div className="toDo">
+          <ToDoListDisplay
+            deleteItem={deleteItem}
+            items={items.filter((item) => item.status === "toDo")}
+            saveTodo={saveTodo}
+          />
+        </div>
+        <div className="inProgress">
+          <ToDoListDisplay
+            deleteItem={deleteItem}
+            items={items.filter((item) => item.status === "inProgress")}
+            saveTodo={saveTodo}
+          />
+        </div>
+        <div className="completed">
+          <ToDoListDisplay
+            deleteItem={deleteItem}
+            items={items.filter((item) => item.status === "completed")}
+            saveTodo={saveTodo}
+          />
+        </div>
+      </div>
+      <div>
+        <ToDoListButtons addText={addText} minusText={minusText} />
+      </div>
     </div>
   );
 };
