@@ -53,13 +53,15 @@ export const ToDoList = () => {
     });
     //добавляем в фильтрованый массив новое значение
     const newArray = [...filtredItems, newItem];
-    //сортировать по id( sort, find)
+    const sortItems = newArray.sort((item) => {
+      return item.id;
+    });
+
+    //сортировать по id( sort, find) V
     //устанавливаем setItems
-    setItems(newArray);
+    setItems(sortItems);
 
-
-
- //
+    //
     //решение черех findIndex:
     // найти элемент , который = id элемента массива
     //
@@ -71,6 +73,7 @@ export const ToDoList = () => {
     <div>
       <div id="columns">
         <div className="toDo">
+          <h2 className="toDo">Сделать</h2>
           <ToDoListDisplay
             deleteItem={deleteItem}
             items={items.filter((item) => item.status === "toDo")}
@@ -78,6 +81,8 @@ export const ToDoList = () => {
           />
         </div>
         <div className="inProgress">
+          <h2 className="inProgress">В работе</h2>
+
           <ToDoListDisplay
             deleteItem={deleteItem}
             items={items.filter((item) => item.status === "inProgress")}
@@ -85,6 +90,8 @@ export const ToDoList = () => {
           />
         </div>
         <div className="completed">
+          <h2 className="completed">Завершено</h2>
+
           <ToDoListDisplay
             deleteItem={deleteItem}
             items={items.filter((item) => item.status === "completed")}

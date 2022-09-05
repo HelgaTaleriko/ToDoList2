@@ -7,10 +7,8 @@ export type Iprops = {
   saveTodo: (text: string, id: number) => void;
 };
 export const ToDoListDisplay = ({ items, deleteItem, saveTodo }: Iprops) => {
-  const text = "Список :";
   return (
     <div>
-      <h1> {text}</h1>
       <ul>
         {items.map((item) => (
           <ToDoListItem

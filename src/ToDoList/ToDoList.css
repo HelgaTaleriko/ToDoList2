@@ -1,24 +1,143 @@
-#columns {
-  -ms-box-orient: horizontal;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: row wrap;
-}
+.header{
+    /* Хедер */
 
-.toDo {
-  flex-grow: 1;
-  border: 3px solid crimson;
+
+    position: absolute;
+    width: 1440px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+
+    background: rgba(86, 214, 222, 0.63);
+}
+.footer{
+    /* Футер */
+
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 88.28%;
+    bottom: 0%;
+
+    background: rgba(201, 115, 242, 0.51);
+}
+#columns{
+    position: absolute;
+    width: 1376px;
+    height: 601px;
+    left: 85px;
+    top: 160px;
+}
+div.toDo{
+    /* Колонка */
+
+
+    position: absolute ;
+    margin-left: 85px;
+    margin-top: 160px;
+    width: 495px;
+    height: 601px;
+
+
+    /* Заливка */
+
+
+    position: absolute;
+    width: 390px;
+    height: 546px;
+    left: 0px;
+    top: 0px;
+
+    /* блу-перпл */
+
+    background: linear-gradient(180deg, rgba(173, 250, 255, 0.51) 37.24%, rgba(201, 115, 242, 0.102) 100%);
+    border-radius: 10px 10px 16px 16px;
+}
+h2.toDo{
+    /* Заголовок */
+
+
+    padding: 3px 124px;
+
+
+    background: rgba(133, 70, 240, 0.87);
+    border-radius: 10px 10px 0px 0px;
+
+    /* TO DO */
+
+
+    width: 141px;
+    height: 43px;
+
+    font-family: 'Kdam Thmor';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 43px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+
+    border: 1px solid rgba(255, 255, 255, 0.84);
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+div.inProgress{
+    /* 2 Колонка */
+
+
+    position: absolute;
+    margin-top: 160px;
+    margin-left:524px;
+    width: 495px;
+    height: 601px;
+
+    /* Заливка */
+
+
+    position: absolute;
+    width: 390px;
+    height: 546px;
+    left: 0px;
+    top: 0px;
+
+    /* блу-перпл */
+
+    background: linear-gradient(180deg, rgba(173, 250, 255, 0.51) 37.24%, rgba(201, 115, 242, 0.102) 100%);
+    border-radius: 10px 10px 16px 16px;
 
 }
-.inProgress {
-    flex-grow: 1;
-    border: 3px solid orange;
+div.completed{
+    /* 3 Колонка */
+
+
+    position: absolute;
+    margin-top: 160px;
+    margin-left: 966px;
+    width: 495px;
+    height: 601px;
+
+    /* Заливка */
+
+
+    position: absolute;
+    width: 390px;
+    height: 546px;
+    left: 0px;
+    top: 0px;
+
+    /* блу-перпл */
+
+    background: linear-gradient(180deg, rgba(173, 250, 255, 0.51) 37.24%, rgba(201, 115, 242, 0.102) 100%);
+    border-radius: 10px 10px 16px 16px;
 
 }
-.completed {
-    flex-grow: 1;
-    border: 3px solid green;
-
-}
-div {
-    background-color: blanchedalmond;}
