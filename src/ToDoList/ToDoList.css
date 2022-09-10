@@ -1,17 +1,39 @@
 
 .header{
-    /* Хедер */
-
     position: absolute;
     left: 0%;
     right: 0%;
     top: 0%;
-    bottom: 88.28%;
+    bottom: 91%;
 
     background: rgba(86, 214, 222, 0.63);
 }
+.container{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(4,1fr);
+    height: 100vh;
+    grid-row-gap: 85px;
+
+    /*grid-template-rows: minmax(60px,auto) 50% 20% minmax(120px,auto);*/
+
+
+
+
+;
+
+}
+
+/*div#columns{*/
+/*    display: grid;*/
+/*    grid-template-columns: minmax(420px,auto) minmax(420px,auto) minmax(420px,auto);*/
+/*    */
+/*    grid-gap: 20px;*/
+/*    justify-content: center;*/
+/*}*/
 .footer{
-    /* Футер */
+    /*!* Футер *!*/
 
 
     position: absolute;
@@ -19,17 +41,19 @@
     right: 0%;
     top: 88.28%;
     bottom: 0%;
-
     background: rgba(201, 115, 242, 0.51);
 }
-div#columns{
-    display: grid;
-    grid-template-columns: minmax(420px,auto) minmax(420px,auto) minmax(420px,auto);
-    grid-template-rows: 2fr 4fr 2fr;
-    grid-gap: 20px;
-    justify-content: center;
-grid-row: 2/6;
+#columns{
+    /*grid-area: columns;*/
+    grid-column-gap: 20px;
+
+
+
 }
+.input{
+    grid-area: input;
+}
+
 div.toDo{
     /* Колонка */
 
@@ -41,7 +65,6 @@ div.toDo{
     /*height: 601px;*/
 
     /* Rectangle 10 */
-
 
     box-sizing: border-box;
     border: 1px solid #D9D9D9;
@@ -100,6 +123,9 @@ div.completed{
     /*margin-left: 966px;*/
     /*width: 495px;*/
     /*height: 601px;*/
+    /*grid-column: 4/5;*/
+    /*grid-row: 2/3;*/
+
 
     box-sizing: border-box;
     border: 1px solid #D9D9D9;

@@ -3,7 +3,7 @@ import "./ToDoList.css";
 
 export const FinalTDL = () => {
   return (
-    <div>
+    <div className="container">
       <div className="header">Header</div>
       <ToDoList />
       <div className="footer">Footer</div>

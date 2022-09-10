@@ -21,7 +21,7 @@ export const TDLEdit = ({ item, saveTodo }: Iprops) => {
   };
 
   return isEdit ? (
-    <div>
+    <div className="input">
       <input onChange={handleChange} value={text} />
       <button onClick={handleClickEdit}>Сохранить</button>
     </div>
