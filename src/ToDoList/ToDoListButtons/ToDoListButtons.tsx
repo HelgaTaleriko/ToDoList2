@@ -14,19 +14,26 @@ export const ToDoListButtons = ({ addText, minusText }: Iprops) => {
     setInput("");
   };
   return (
-    <div>
+    <div className="inputBox">
       <input
+        className="input"
         onChange={handleChange}
         value={input}
         type={"text"}
         placeholder="Введите данные"
       />
-
-      <button onClick={handleClickClear}>&times;</button>
+      <button className="x" onClick={handleClickClear}>
+        &times;
+      </button>
 
       <br />
-      <button onClick={handleClickAdd}> Добавить</button>
-      <button onClick={handleClickDel}>Очистить список</button>
+      <button className="add" onClick={handleClickAdd}>
+        {" "}
+        Добавить
+      </button>
+      <button className="delete" onClick={handleClickDel}>
+        Очистить список
+      </button>
     </div>
   );
 };
