@@ -8,7 +8,7 @@ export type Iprops = {
 };
 export const ToDoListDisplay = ({ items, deleteItem, saveTodo }: Iprops) => {
   return (
-    <div>
+    <div className="filling">
       <ul>
         {items.map((item) => (
           <ToDoListItem
